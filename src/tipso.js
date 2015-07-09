@@ -37,7 +37,8 @@
       useTitle        : true,
       onBeforeShow    : null,
       onShow          : null,
-      onHide          : null
+      onHide          : null,
+      extraClass      : null   
     };
 
   function Plugin(element, options) {
@@ -145,6 +146,9 @@
             color: obj.settings.color,
             width: 200
           }).hide();
+        }
+        if (obj.settings.extraClass) {
+            tipso_bubble.addClass(obj.settings.extraClass);
         }
         tipso_bubble.find('.tipso_content').html(obj.content());
         reposition(obj);
